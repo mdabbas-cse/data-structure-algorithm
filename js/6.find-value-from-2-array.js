@@ -33,6 +33,15 @@ function containsCommonItem2(arr1, arr2) {
   }
   return false
 }
+
+function betterSolution(arr, sum) {
+  const mySet = new Set()
+  for (let i = 0; i < arr.length; i++) {
+    if (mySet.has(arr[i])) return true
+    mySet.add(sum - arr[i])
+  }
+  return false
+}
 //O(a + b) Time Complexity
 //O(a) Space Complexity
 // 👉 Second Solution
@@ -44,3 +53,4 @@ const array2 = ['z', 'y', 'd'];
 console.log(containsCommonItem(array1, array2))
 console.log(containsCommonItem2(array1, array2))
 console.log(containsCommonItem3(array1, array2))
+console.log(betterSolution([1, 2, 3, 4, 5], 5))
