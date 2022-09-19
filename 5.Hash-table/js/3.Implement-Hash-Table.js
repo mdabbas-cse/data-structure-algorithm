@@ -7,8 +7,8 @@
  | Delete     O(1)	    O(n)
  */
 class HashTable {
-  constructor() {
-    this.table = new Array(127)
+  constructor(size) {
+    this.table = new Array(size)
     this.length = 0
   }
 
@@ -23,11 +23,12 @@ class HashTable {
 
   get(key) {
     const tatgetIndex = this._hash(key)
-    if (this.table[tatgetIndex]) {
-      const len = this.table.length
+    const currentElement = this.table[tatgetIndex]
+    if (currentElement) {
+      const len = currentElement.length
       for (let i = 0; i < len; i++) {
-        if (this.table[tatgetIndex][i][0] === key) {
-          return this.table[tatgetIndex][i][1]
+        if (currentElement[i][0] === key) {
+          return currentElement[i][1]
         }
       }
     }
@@ -36,18 +37,19 @@ class HashTable {
 
   set(key, value) {
     const index = this._hash(key)
+    const currentElement = this.table[index]
     // chack index already exist
-    if (this.table[index]) {
-      const len = this.table[index].length
+    if (currentElement) {
+      const len = currentElement.length
       for (let i = 0; i < len; i += 1) {
         // Find the key/value pair in the chain
-        if (this.table[index][i][0] === key) {
-          this.table[index][i][1] = value
+        if (currentElement[i][0] === key) {
+          currentElement[i][1] = value
           return
         }
       }
       // not found, push a new key/value pair
-      this.table[index].push([key, value]);
+      currentElement.push([key, value]);
     } else {
       this.table[index] = []
       this.table[index].push([key, value])
@@ -66,6 +68,16 @@ class HashTable {
     }
     return 'Invalid target key!'
   }
+  keys() {
+    const keyArray = []
+    for (let i = 0; i < this.table.length; i += 1) {
+      if (this.table[i]) {
+        keyArray.push(this.table[i][0][0])
+      }
+    }
+    return keyArray
+  }
+
   display() {
     this.table.forEach((values, index) => {
       const chainedValues = values.map(
@@ -76,19 +88,19 @@ class HashTable {
   }
 }
 
-const ht = new HashTable();
+const ht = new HashTable(127); // for 0 - 127
 
 ht.set("France", 111);
 ht.set("Spain", 150);
 ht.set("ǻ", 192);
 
-ht.display();
+// ht.display();
 // 83: [ France: 111 ]
 // 126: [ Spain: 150 ],[ ǻ: 192 ]
 
 console.log(ht.length); // 3
 ht.remove("Spain");
-ht.display();
+// ht.display();
+ht.keys()
 // 83: [ France: 111 ]
 // 126: [ ǻ: 192 ]
-console.log(ht.table)
