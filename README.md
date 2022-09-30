@@ -27,3 +27,22 @@
 - Data Structures
 - Function Call
 - Allocations
+
+/**
+ | HASH TABLE TIME COMPLEXITY IN BIG O NOTATION	
+ | Algorithm  Average   Worst case
+ | Space      O(n)	    O(n)
+ | Search     O(1)	    O(n)
+ | Insert     O(1)	    O(n)
+ | Delete     O(1)	    O(n)
+ */
+
+ 
+
+> HASH TABLE TIME COMPLEXITY IN BIG O NOTATION
+| Algorithm   | Average|
+| prepend     | O(1) |
+| append      | O(1) |
+| lookup      | O(n) |
+| insert      | O(n) |
+| delete      | O(n) |
