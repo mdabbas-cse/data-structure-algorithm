@@ -21,6 +21,7 @@ function firstRecurringCharacter(input) {
 // solved by hash table
 function firstRecurringCharacter2(input) {
   const map = {}
+  let sum = 0
   for (let i = 0; i < input.length; i += 1) {
     if (map[input[i]] !== undefined)
       return input[i]
