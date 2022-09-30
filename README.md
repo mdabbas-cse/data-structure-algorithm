@@ -34,11 +34,16 @@
  | Search  |   O(1)	 |   O(n)|
  | Insert  |   O(1)	 |   O(n)|
  | Delete  |   O(1)	 |   O(n)|
-## Linked list time complexity in Big 0 notation
+
+## Linked list
+- Singly Linked List
+- Circular Linked List
+- Doubly Linked List
+### Linked list time complexity in Big 0 notation
 | Algorithm   | Average|
 | ----------  | -------|
 | prepend     | O(1) |
 | append      | O(1) |
-| lookup      | O(n) |
+| lookup/search      | O(n) |
 | insert      | O(n) |
 | delete      | O(n) |
