@@ -27,8 +27,13 @@
 - Data Structures
 - Function Call
 - Allocations
-
-## LINKED LIST TIME COMPLEXITY IN BIG O NOTATION
+## Hash table time complexity in Big o notation
+ | Algorithm | Average |  Worst case|
+ | Space   |   O(n)	 |   O(n)|
+ | Search  |   O(1)	 |   O(n)|
+ | Insert  |   O(1)	 |   O(n)|
+ | Delete  |   O(1)	 |   O(n)|
+## Linked list time complexity in Big 0 notation
 | Algorithm   | Average|
 | ----------  | -------|
 | prepend     | O(1) |
