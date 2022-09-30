@@ -39,7 +39,7 @@
 
  
 
-> HASH TABLE TIME COMPLEXITY IN BIG O NOTATION
+> LINKED LIST TIME COMPLEXITY IN BIG O NOTATION
 | Algorithm   | Average|
 | prepend     | O(1) |
 | append      | O(1) |
