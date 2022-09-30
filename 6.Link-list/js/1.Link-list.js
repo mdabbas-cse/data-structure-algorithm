@@ -53,6 +53,18 @@ class LinkedList {
     return this
   }
 
+  // for lookup or search
+  lookup(value) {
+    let currentNode = this.head
+    let counter = 0
+    while (currentNode !== null) {
+      if (currentNode.value === value) return true
+      currentNode = currentNode.next
+      counter++
+    }
+    return false
+  }
+
   #traverseToIndex(previusIndex) {
     let currentNode = this.head
     let counter = 0
@@ -93,4 +105,4 @@ linkedlist
   .printList()
   .remove(2)
   .printList()
-// console.log(linkedlist)
+console.log(linkedlist.lookup(100))
