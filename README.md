@@ -28,7 +28,8 @@
 - Function Call
 - Allocations
 ## Hash table time complexity in Big o notation
- | Algorithm | Average |  Worst case|
+ | Algorithm | Average |  Worst case |
+ | ---------- | ------- |  --------- |
  | Space   |   O(n)	 |   O(n)|
  | Search  |   O(1)	 |   O(n)|
  | Insert  |   O(1)	 |   O(n)|
