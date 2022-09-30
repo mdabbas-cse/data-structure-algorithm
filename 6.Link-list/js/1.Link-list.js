@@ -45,7 +45,14 @@ class LinkedList {
     leader.next = newNode
     newNode.next = holdingPointer
     this.length++
-    // console.log('leader', leader.next)
+    return this
+  }
+
+  remove(index) {
+    const leader = this.#traverseToIndex(index - 1)
+    const unwantedNode = leader.next
+    leader.next = unwantedNode.next
+    this.length--
     return this
   }
 
@@ -60,16 +67,18 @@ class LinkedList {
   }
 
   printList() {
-    const arrayList = {}
+    const arrayList = { data: {}, length: this.length }
     let currentNode = this.head
     let propertyId = 0
     while (currentNode !== null) {
-      arrayList[propertyId] = currentNode.value
+      arrayList.data[propertyId] = currentNode.value
       currentNode = currentNode.next
       propertyId++
     }
     console.log(arrayList)
+    return this
   }
+
 }
 
 
@@ -84,5 +93,7 @@ linkedlist
   .insert(10, 99)
   .insert(0, 88)
   .insert(3, 77)
+  .printList()
+  .remove(2)
   .printList()
 // console.log(linkedlist)
