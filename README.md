@@ -47,3 +47,4 @@
 | lookup/search      | O(n) |
 | insert      | O(n) |
 | delete      | O(n) |
+| reverse      | O(n) |
