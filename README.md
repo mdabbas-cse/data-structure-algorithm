@@ -27,7 +27,7 @@
 - Data Structures
 - Function Call
 - Allocations
-## Hash table time complexity in Big o notation
+## Hash table time complexity in Big O notation
  | Algorithm | Average |  Worst case |
  | ---------- | ------- |  --------- |
  | Space   |   O(n)	 |   O(n)|
@@ -39,7 +39,7 @@
 - Singly Linked List
 - Circular Linked List
 - Doubly Linked List
-### Linked list time complexity in Big 0 notation
+### Linked list time complexity in Big O notation
 | Algorithm   | Average|
 | ----------  | -------|
 | prepend     | O(1) |
@@ -48,3 +48,17 @@
 | insert      | O(n) |
 | delete      | O(n) |
 | reverse      | O(n) |
+### Stacks time complexity in Big O notation
+| Algorithm   | Average|
+| ----------  | -------|
+| lookup     | O(n) |
+| pop      | O(1) |
+| push      | O(1) |
+| peek      | O(1) |
+### Stacks time complexity in Big O notation
+| Algorithm   | Average|
+| ----------  | -------|
+| lookup     | O(n) |
+| enqueue      | O(1) |
+| dequeue      | O(1) |
+| peek      | O(1) |
