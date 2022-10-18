@@ -55,10 +55,16 @@
 | pop      | O(1) |
 | push      | O(1) |
 | peek      | O(1) |
-### Stacks time complexity in Big O notation
+### Queue time complexity in Big O notation
 | Algorithm   | Average|
 | ----------  | -------|
 | lookup     | O(n) |
 | enqueue      | O(1) |
 | dequeue      | O(1) |
 | peek      | O(1) |
+### Binary tree time complexity in Big O notation
+| Algorithm   | Average|
+| ----------  | -------|
+| lookup     | O(log n) |
+| insert      | O(log n) |
+| delete      | O(log n) |
