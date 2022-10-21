@@ -51,6 +51,11 @@ class BinaryTree {
     }
     return `"${value}" is not found!`
   }
+
+  remove(value) {
+    if (!this.root) return
+
+  }
 }
 
 console.clear()
