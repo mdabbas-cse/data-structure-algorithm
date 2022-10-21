@@ -43,34 +43,34 @@ class BinaryTree {
     }
   }
 
-  lookup(root, value) {
-    if (!root) return false
-    if (value === root.value) {
+  *lookup(node, value) {
+    if (!node) return false
+    if (value === node.value) {
       return true
-    } else if (value < root.value) {
-      return this.lookup(root.left, value)
+    } else if (value < node.value) {
+      return this.lookup(node.left, value)
     } else {
-      return this.lookup(root.right, value)
+      return this.lookup(node.right, value)
     }
   }
 
 
   // DFS traversal
-  preOrder(root) {
-    if (!root) return
-    console.log(root.value)
-    this.preOrder(root.left)
-    this.preOrder(root.right)
+  *preOrder(node = this.node) {
+    if (!node) return
+    console.log(node.value)
+    this.preOrder(node.left)
+    this.preOrder(node.right)
   }
 
-  inOrder(root) {
+  inOrder(root = this.root) {
     if (!root) return
     this.inOrder(root.left)
     console.log(root.value)
     this.inOrder(root.right)
   }
 
-  postOrder(root) {
+  postOrder(root = this.root) {
     if (!root) return
     this.postOrder(root.left)
     this.postOrder(root.right)
@@ -90,7 +90,7 @@ class BinaryTree {
   }
 
   // min value 
-  min(root) {
+  min(root = this.root) {
     if (!root.left)
       return root.value
     else
@@ -98,15 +98,32 @@ class BinaryTree {
   }
 
   // max depth
-  max(root) {
+  max(root = this.root) {
     if (!root.right)
       return root.value
     else
       return this.max(root.right)
   }
 
-  remove(value) {
-
+  delete(node = this.root, value) {
+    if (node === null) return node
+    if (value < node.value) {
+      node.left = this.delete(node.left, value)
+    } else if (value > node.value) {
+      node.right = this.delete(node.right, value)
+    } else {
+      if (!node.left && !node.right) {
+        return null
+      }
+      if (!node.left) {
+        node = node.right
+      } else if (!node.right) {
+        node = node.left
+      }
+      node.value = this.min(node.right)
+      node.right = this.delete(node.right, node.value)
+    }
+    return node
   }
 
   display() {
@@ -131,5 +148,7 @@ display(binaryTree.root)
 // binaryTree.inOrder(binaryTree.root)
 // binaryTree.postOrder(binaryTree.root)
 // binaryTree.lavalOrder()
-display(binaryTree.min(binaryTree.root))
-display(binaryTree.max(binaryTree.root))
+// display(binaryTree.min())
+// display(binaryTree.max())
+binaryTree.delete(binaryTree.root, 5)
+display(binaryTree.root)
