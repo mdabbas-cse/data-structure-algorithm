@@ -1,3 +1,7 @@
+function display(data) {
+  console.log(JSON.stringify(data))
+}
+
 class Node {
   constructor(value) {
     this.value = value
@@ -39,20 +43,22 @@ class BinaryTree {
     }
   }
 
-  lookup(value) {
-    let currentNode = this.root
-    while (currentNode) {
-      if (value === currentNode.value) {
-        this.displayData = currentNode
-        return this
-      } else if (value < currentNode.value) {
-        currentNode = currentNode.left
-      } else if (value > currentNode.value) {
-        currentNode = currentNode.right
-      }
+  lookup(root, value) {
+    if (!root) return false
+    if (value === root.value) {
+      return true
+    } else if (value < root.value) {
+      return this.lookup(root.left, value)
+    } else {
+      return this.lookup(root.right, value)
     }
-    this.displayData = `${value} is not found!`
-    return this
+  }
+
+  preOrder(root) {
+    if (!root) return
+    console.log(root.value)
+    this.preOrder(root.left)
+    this.preOrder(root.right)
   }
 
   remove(value) {
@@ -76,4 +82,6 @@ binaryTree.insert(6)
 binaryTree.insert(15)
 binaryTree.insert(170).display()
 // console.log(JSON.stringify(binaryTree.root))
-binaryTree.lookup(170).display()
+// display(binaryTree.root)
+// display(binaryTree.lookup(binaryTree.root, 29))
+binaryTree.preOrder(binaryTree.root)
