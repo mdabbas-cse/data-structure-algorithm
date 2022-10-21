@@ -19,25 +19,24 @@ class BinaryTree {
       this.root = newNode
     }
     else {
-      let currentNode = this.root
-      while (currentNode) {
-        if (value < currentNode.value) {
-          if (!currentNode.left) {
-            currentNode.left = newNode
-            return this
-          }
-          currentNode = currentNode.left
-        } else {
-          if (!currentNode.right) {
-            currentNode.right = newNode
-            return this
-          }
-          currentNode = currentNode.right
-        }
-      }
+      this.#insertNode(this.root, newNode)
     }
     this.displayData = this.root
     return this
+  }
+
+  #insertNode(root, newNode) {
+    if (newNode.value < root.value) {
+      if (!root.left)
+        root.left = newNode
+      else
+        this.#insertNode(root.left, newNode)
+    } else {
+      if (!root.right)
+        root.right = newNode
+      else
+        this.#insertNode(root.right, newNode)
+    }
   }
 
   lookup(value) {
