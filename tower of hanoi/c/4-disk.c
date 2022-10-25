@@ -143,7 +143,7 @@ void tohIterative(int num_of_disks, struct Stack *src, struct Stack *aux,
 int main()
 {
   // Input: number of disks
-  unsigned num_of_disks = 3;
+  unsigned num_of_disks = 4;
 
   struct Stack *src, *dest, *aux;
 
