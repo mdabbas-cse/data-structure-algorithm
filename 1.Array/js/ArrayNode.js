@@ -6,6 +6,7 @@ class ArrayNode {
 
   //get data from array by index
   get(index) {
+    if (index < 0 || index >= this.length || !this.data[index]) return
     return this.data[index]
   }
 
