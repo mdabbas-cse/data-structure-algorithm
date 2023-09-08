@@ -14,9 +14,6 @@ function merge(arr, l, m, r) {
   for (var j = 0; j < n2; j++)
     R[j] = arr[m + 1 + j];
 
-  // Merge the temp arrays back into arr[l..r]
-
-  // Initial index of first subarray
   var i = 0;
 
   // Initial index of second subarray
